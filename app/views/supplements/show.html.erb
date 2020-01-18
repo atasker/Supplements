@@ -1,34 +1,26 @@
-<!DOCTYPE html>
-<html lang="en-US">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width">
-    <meta name="description" content="website description < 300 chars">
-    <title><%= @supplement.name %> Supplement | Benefits, Uses and Side Effects | Name</title>
-  </head>
-  <body>
+<% content_for :head do %>
+  <title><%= @supplement.name %> Supplement | Benefits, Uses and Side Effects | Name</title>
+  <meta name="description" content="website description < 300 chars">
+<% end %>
 
-	<p>
-	  <strong>ID:</strong>
-	  <%= @supplement.id %>
-	</p>
+<p>
+  <strong>ID:</strong>
+  <%= @supplement.id %>
+</p>
 
-	<p>
-	  <strong>Name:</strong>
-	  <%= @supplement.name %>
-	</p>
-	 
-	<p>
-	  <strong>AKA:</strong>
-	  <%= @supplement.aka %>
-	</p>
+<p>
+  <strong>Name:</strong>
+  <%= @supplement.name %>
+</p>
+ 
+<p>
+  <strong>AKA:</strong>
+  <%= @supplement.aka %>
+</p>
 
-	<p>
-	  <strong>Category:</strong>
-	  <%= Category.find(@supplement.category_id).description %>
-	</p>
+<p>
+  <strong>Category:</strong>
+  <%= Category.find(@supplement.category_id).description %>
+</p>
 
-	<%= link_to "Back to all supplements", supplements_path %>
-
-  </body>
-</html>
+<%= link_to "Back to all supplements", supplements_path %>

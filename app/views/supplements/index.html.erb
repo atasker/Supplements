@@ -1,33 +1,25 @@
-<!DOCTYPE html>
-<html lang="en-US">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width">
-    <meta name="description" content="website description < 300 chars">
-    <title>List of Supplements | Name</title>
-  </head>
-  <body>
+<% content_for :head do %>
+  <title>List of Supplements | Name</title>
+  <meta name="description" content="website description < 300 chars">
+<% end %>
 
-    <h1>Listing Supplements</h1>
-     
-    <table>
-      <tr>
-        <th>ID</th>
-        <th>Name</th>
-        <th>AKA</th>
-        <th>Category</th>
-      </tr>
-     
-      <% @supplements.each do |supplement| %>
-        <tr>
-          <td><%= supplement.id %></td>
-          <td><%= supplement.name %></td>
-          <td><%= supplement.aka %></td>
-          <td><%= supplement.category_id %></td>
-          <td><%= link_to 'Show', supplement_path(supplement) %></td>
-        </tr>
-      <% end %>
-    </table>
-
-  </body>
-</html>
+<h1>Listing Supplements</h1>
+ 
+<table>
+  <tr>
+    <th>ID</th>
+    <th>Name</th>
+    <th>AKA</th>
+    <th>Category</th>
+  </tr>
+ 
+  <% @supplements.each do |supplement| %>
+    <tr>
+      <td><%= supplement.id %></td>
+      <td><%= supplement.name %></td>
+      <td><%= supplement.aka %></td>
+      <td><%= supplement.category_id %></td>
+      <td><%= link_to 'Show', supplement_path(supplement) %></td>
+    </tr>
+  <% end %>
+</table>

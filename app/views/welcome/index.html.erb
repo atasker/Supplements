@@ -1,18 +1,10 @@
-<!DOCTYPE html>
-<html lang="en-US">
-	<head>
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width">
-		<meta name="description" content="website description < 300 chars">
-		<title>Homepage</title>
-	</head>
-	<body>
+<% content_for :head do %>
+  <title>Homepage</title>
+  <meta name="description" content="website description < 300 chars">
+<% end %>
 
-		<h1>Homepage</h1>
+<h1>Homepage</h1>
 
-		<%= link_to "All Categories", categories_path %>
+<%= link_to "All Categories", categories_path %>
 
-		<h3>pretty homepage</h3>
-
-	</body>
-</html>
+<h3>pretty homepage</h3>
