@@ -1,5 +1,5 @@
 <% content_for :head do %>
-  <title><%= @supplement.name %> Supplement | Benefits, Uses and Side Effects | Name</title>
+  <title><%= @supplement.name %> Supplement: Benefits, Uses and Side Effects | Name</title>
   <meta name="description" content="website description < 300 chars">
 <% end %>
 
@@ -18,9 +18,13 @@
   <%= @supplement.aka %>
 </p>
 
-<p>
-  <strong>Category:</strong>
-  <%= Category.find(@supplement.category_id).description %>
-</p>
+<% if @supplement.category_id != nil %>
+
+  <p>
+    <strong>Category:</strong>
+    <%= Category.find(@supplement.category_id).description %>
+  </p>
+
+<% end %>
 
 <%= link_to "Back to all supplements", supplements_path %>
