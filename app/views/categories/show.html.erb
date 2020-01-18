@@ -1,39 +1,52 @@
-<p>
-  <strong>ID:</strong>
-  <%= @category.id %>
-</p>
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <meta name="description" content="website description < 300 chars">
+    <title><%= @category.description %> Supplement | Benefits, Uses and Side Effects | Name</title>
+  </head>
+  <body>
 
-<p>
-  <strong>Description:</strong>
-  <%= @category.description %>
-</p>
+	<p>
+	  <strong>ID:</strong>
+	  <%= @category.id %>
+	</p>
 
-<p>
-  <strong>Slug:</strong>
-  <%= @category.slug %>
-</p>
+	<p>
+	  <strong>Description:</strong>
+	  <%= @category.description %>
+	</p>
 
-<% if ! @supplements.empty? %>
+	<p>
+	  <strong>Slug:</strong>
+	  <%= @category.slug %>
+	</p>
 
-	<h2>All <%= @category.description %> supplements</h2>
+	<% if ! @supplements.empty? %>
 
-	<table>
-	  <tr>
-	  	<th>ID</th>
-	    <th>Name</th>
-	    <th>AKA</th>
-	  </tr>
-	 
-	  <% @supplements.each do |supplement| %>
-	    <tr>
-	      <td><%= supplement.id %></td>
-	      <td><%= supplement.name %></td>
-	      <td><%= supplement.aka %></td>
-	      <td><%= link_to 'Show', supplement_path(supplement) %></td>
-	    </tr>
-	  <% end %>
-	</table>
+		<h2>All <%= @category.description %> supplements</h2>
 
-<% end %>
+		<table>
+		  <tr>
+		  	<th>ID</th>
+		    <th>Name</th>
+		    <th>AKA</th>
+		  </tr>
+		 
+		  <% @supplements.each do |supplement| %>
+		    <tr>
+		      <td><%= supplement.id %></td>
+		      <td><%= supplement.name %></td>
+		      <td><%= supplement.aka %></td>
+		      <td><%= link_to 'Show', supplement_path(supplement) %></td>
+		    </tr>
+		  <% end %>
+		</table>
 
-<%= link_to "Back to all categories", categories_path %>
+	<% end %>
+
+	<%= link_to "Back to all categories", categories_path %>
+
+  </body>
+</html>
