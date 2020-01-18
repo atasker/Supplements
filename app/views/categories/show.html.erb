@@ -1,0 +1,39 @@
+<p>
+  <strong>ID:</strong>
+  <%= @category.id %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @category.description %>
+</p>
+
+<p>
+  <strong>Slug:</strong>
+  <%= @category.slug %>
+</p>
+
+<% if ! @supplements.empty? %>
+
+	<h2>All <%= @category.description %> supplements</h2>
+
+	<table>
+	  <tr>
+	  	<th>ID</th>
+	    <th>Name</th>
+	    <th>AKA</th>
+	  </tr>
+	 
+	  <% @supplements.each do |supplement| %>
+	    <tr>
+	      <td><%= supplement.id %></td>
+	      <td><%= supplement.name %></td>
+	      <td><%= supplement.aka %></td>
+	      <td><%= link_to 'Show', supplement_path(supplement) %></td>
+	    </tr>
+	  <% end %>
+	</table>
+
+<% end %>
+
+<%= link_to "Back to all categories", categories_path %>

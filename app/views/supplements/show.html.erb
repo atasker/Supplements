@@ -1,0 +1,21 @@
+<p>
+  <strong>ID:</strong>
+  <%= @supplement.id %>
+</p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @supplement.name %>
+</p>
+ 
+<p>
+  <strong>AKA:</strong>
+  <%= @supplement.aka %>
+</p>
+
+<p>
+  <strong>Category:</strong>
+  <%= Category.find(@supplement.category_id).description %>
+</p>
+
+<%= link_to "Back to all supplements", supplements_path %>
