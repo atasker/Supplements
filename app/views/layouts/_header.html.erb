@@ -1,0 +1,27 @@
+<%= include_gon %>
+
+<div id="bloodhound">
+  <input class="typeahead" type="text" placeholder="Search...">
+</div>
+
+<script type="text/javascript">
+
+	var supplement_array = gon.supplement_array;
+
+	var supplement_array = new Bloodhound({
+	  datumTokenizer: Bloodhound.tokenizers.whitespace,
+	  queryTokenizer: Bloodhound.tokenizers.whitespace,
+	  local: supplement_array
+	});
+
+	$('#bloodhound .typeahead').typeahead({
+	  hint: true,
+	  highlight: true,
+	  minLength: 2
+	},
+	{
+	  name: 'supplement_array',
+	  source: supplement_array
+	});
+
+</script>
