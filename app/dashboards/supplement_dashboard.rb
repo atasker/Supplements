@@ -12,6 +12,7 @@ class SupplementDashboard < Administrate::BaseDashboard
     id: Field::Number,
     name: Field::String,
     aka: Field::Text,
+    slug: Field::String,
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
   }.freeze
@@ -26,6 +27,7 @@ class SupplementDashboard < Administrate::BaseDashboard
   category
   name
   aka
+  slug
   ].freeze
 
   # SHOW_PAGE_ATTRIBUTES
@@ -37,6 +39,7 @@ class SupplementDashboard < Administrate::BaseDashboard
   aka
   created_at
   updated_at
+  slug
   ].freeze
 
   # FORM_ATTRIBUTES
@@ -46,6 +49,7 @@ class SupplementDashboard < Administrate::BaseDashboard
   category
   name
   aka
+  slug
   ].freeze
 
   # COLLECTION_FILTERS
