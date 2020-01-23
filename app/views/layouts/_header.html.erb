@@ -8,6 +8,29 @@
 
     var supplement_array = gon.supplement_array;
 
+    // This prevents two suggestions in the search dropdown
+    // being highlighted at one time
+    $('div').on("mouseover",'.tt-suggestion',function(){
+      $('.tt-selectable').removeClass('tt-cursor')
+      $('.tt-selectable').css( "color", '')
+      $('.tt-selectable').css( "background-color", '')
+      $(this).css( "color", '#f0f0f0')
+      $(this).css( "background-color", '#0097cf')
+    })
+    document.onkeydown = checkKey;
+    function checkKey(e) {
+      e = e || window.event;
+      if (e.keyCode == '40') {
+        $('.tt-selectable').css( "color", '')
+        $('.tt-selectable').css( "background-color", '')
+      }
+      if (e.keyCode == '38') {
+        $('.tt-selectable').css( "color", '')
+        $('.tt-selectable').css( "background-color", '')
+      }
+    }
+    // See https://stackoverflow.com/questions/59876952/css-target-an-element-on-hover-or-focus-but-not-both/59877867#59877867
+
     var supplement_array = new Bloodhound({
       datumTokenizer: Bloodhound.tokenizers.whitespace,
       queryTokenizer: Bloodhound.tokenizers.whitespace,

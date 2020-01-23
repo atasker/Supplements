@@ -36,10 +36,10 @@
     cursor: pointer;
 }
 
-.tt-suggestion:hover {
+/*.tt-suggestion:hover {
     color: #f0f0f0;
     background-color: #0097cf;
-}
+}*/
 
 .tt-cursor {
     color: #f0f0f0;
