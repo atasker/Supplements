@@ -2,7 +2,7 @@
   <input class="typeahead" type="text" placeholder="Search...">
 </div>
 
-<%= stylesheet_link_tag("welcome") %>
+<%= stylesheet_link_tag("header") %>
 
 <script type="text/javascript">
 
@@ -22,6 +22,10 @@
     {
       name: 'supplement_array',
       source: supplement_array
+    }).bind("typeahead:selected", function (obj, datum) {
+        // TODO: refactor below to pull slug directly from db instead of using regex (messy)
+        var slug = datum.toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/(^-|-$)/g,'');
+        location.href = "/supplements/" + slug;
     });
 
 </script>
