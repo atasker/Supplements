@@ -1,0 +1,43 @@
+<h1>Article Show</h1>
+
+<% content_for :head do %>
+  <title><%= @article.title %></title>
+  <meta name="description" content="website description < 300 chars">
+<% end %>
+
+<p>
+  <strong>ID:</strong>
+  <%= @article.id %>
+</p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @article.title %>
+</p>
+ 
+<p>
+  <strong>Body:</strong>
+  <%= @article.body %>
+</p>
+
+<p>
+  <strong>Lead:</strong>
+  <%= @article.lead %>
+</p>
+
+<p>
+  <strong>Category:</strong>
+  <%= Category.find(@article.category_id).description %>
+</p>
+
+<p>
+  <strong>Author:</strong>
+  Add Author model
+</p>
+
+<p>
+  <strong>Image:</strong>
+  <%= @article.image %>
+</p>
+
+<%= link_to "Back to all articles", articles_path %>
