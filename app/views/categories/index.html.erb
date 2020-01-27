@@ -5,7 +5,16 @@
 
 <h1>All Categories</h1>
 
-<%= link_to "Home", root_path %>
+<nav aria-label="Breadcrumb" class="breadcrumb">
+  <ol>
+    <li>
+      <a href="<%= root_path %>">Home</a>
+    </li>
+    <li>
+      <a href="<%= categories_path %>">Categories</a>
+    </li>
+  </ol>
+</nav>
 
 <table>
   <tr>

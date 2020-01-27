@@ -1,9 +1,21 @@
-<h1>Article Show</h1>
-
 <% content_for :head do %>
   <title><%= @article.title %></title>
   <meta name="description" content="website description < 300 chars">
 <% end %>
+
+<nav aria-label="Breadcrumb" class="breadcrumb">
+  <ol>
+    <li>
+      <a href="<%= root_path %>">Home</a>
+    </li>
+    <li>
+      <a href="<%= articles_path %>">Articles</a>
+    </li>
+    <li>
+      <a href="<%= url_for(:only_path => false) %>"><%= @article.title %></a>
+    </li>
+  </ol>
+</nav>
 
 <p>
   <strong>ID:</strong>
@@ -39,5 +51,3 @@
   <strong>Image:</strong>
   <%= @article.image %>
 </p>
-
-<%= link_to "Back to all articles", articles_path %>

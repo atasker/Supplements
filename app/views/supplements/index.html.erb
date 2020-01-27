@@ -5,7 +5,16 @@
 
 <h1>Listing Supplements</h1>
 
-<%= link_to "Home", root_path %>
+<nav aria-label="Breadcrumb" class="breadcrumb">
+  <ol>
+    <li>
+      <a href="<%= root_path %>">Home</a>
+    </li>
+    <li>
+      <a href="<%= supplements_path %>">Supplements</a>
+    </li>
+  </ol>
+</nav>
  
 <table>
   <tr>

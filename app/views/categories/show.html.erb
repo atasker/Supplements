@@ -3,6 +3,20 @@
   <meta name="description" content="website description < 300 chars">
 <% end %>
 
+<nav aria-label="Breadcrumb" class="breadcrumb">
+  <ol>
+    <li>
+      <a href="<%= root_path %>">Home</a>
+    </li>
+    <li>
+      <a href="<%= categories_path %>">Categories</a>
+    </li>
+    <li>
+      <a href="<%= url_for(:only_path => false) %>"><%= @category.description %></a>
+    </li>
+  </ol>
+</nav>
+
 <p>
   <strong>ID:</strong>
   <%= @category.id %>
@@ -40,5 +54,3 @@
 	</table>
 
 <% end %>
-
-<%= link_to "Back to all categories", categories_path %>
