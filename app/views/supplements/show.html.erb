@@ -15,7 +15,7 @@
       <a href="<%= category_path(@category) %>"><%= @category.description%></a>
     </li>
     <li>
-      <a href="<%= url_for(:only_path => false) %>"><%= @supplement.name %></a>
+      <%= @supplement.name %>
     </li>
   </ol>
 </nav>

@@ -12,7 +12,7 @@
       <a href="<%= articles_path %>">Articles</a>
     </li>
     <li>
-      <a href="<%= url_for(:only_path => false) %>"><%= @article.title %></a>
+      <%= @article.title %>
     </li>
   </ol>
 </nav>
