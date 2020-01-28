@@ -3,7 +3,7 @@
   <meta name="description" content="website description < 300 chars">
 <% end %>
 
-<h1>Listing Supplements</h1>
+<h1>List of Supplements</h1>
 
 <nav aria-label="Breadcrumb" class="breadcrumb">
   <ol>
@@ -15,6 +15,27 @@
     </li>
   </ol>
 </nav>
+
+<table>
+  <tr>
+    <th>ID</th>
+    <th>Description</th>
+    <th>Slug</th>
+  </tr>
+
+  <h2>Supplement Uses</h2>
+
+  <% @categories.each do |category| %>
+    <tr>
+      <td><%= category.id %></td>
+      <td><%= category.description %></td>
+      <td><%= category.slug %></td>
+      <td><%= link_to 'Show', category_path(category) %></td>
+    </tr>
+  <% end %>
+</table>
+
+<h2>A-Z Supplements</h2>
  
 <table>
   <tr>
