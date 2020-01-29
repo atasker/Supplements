@@ -5,6 +5,6 @@ class Category < ApplicationRecord
 
 	has_many :supplements, dependent: :destroy
 	has_many :articles, dependent: :destroy
-	validates :description, presence: true 
+	validates :description, presence: true
 
 end

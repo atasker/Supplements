@@ -4,6 +4,7 @@ class Article < ApplicationRecord
   	friendly_id :title
 
 	belongs_to :category
+	belongs_to :author
 	validates :title, presence: true
 	validates :body, presence: true
 	validates :lead, presence: true
