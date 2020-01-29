@@ -8,9 +8,10 @@ Rails.application.routes.draw do
   end
   
   get 'welcome/index'
-  resources :supplements
-  resources :categories
-  resources :articles
   root 'welcome#index'
+
+  resources :supplements, only: [:index, :show]
+  resources :categories, only: [:show]
+  resources :articles, only: [:index, :show], path: 'health-news'
 
 end
