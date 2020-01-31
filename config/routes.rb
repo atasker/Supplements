@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
 
+  get 'static_pages/home'
+  get 'static_pages/contact'
+  root 'static_pages#home'
+
   namespace :admin do
       resources :categories
       resources :supplements
@@ -7,9 +11,6 @@ Rails.application.routes.draw do
       resources :authors
       root to: "categories#index"
   end
-  
-  get 'welcome/index'
-  root 'welcome#index'
 
   resources :supplements, only: [:index, :show]
   resources :categories, only: [:show]
