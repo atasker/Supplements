@@ -1,5 +1,5 @@
 <% content_for :head do %>
-  <title>All Articles</title>
+  <title>Nutrition and Supplement News: HealthBravo</title>
   <meta name="description" content="website description < 300 chars">
 <% end %>
 
@@ -22,8 +22,8 @@
     <th>Title</th>
     <th>Body</th>
     <th>Lead</th>
-    <th>Category ID</th>
-    <th>TODO: Add author table and article reference</th>
+    <th>Category</th>
+    <th>Author</th>
     <th>Image</th>
   </tr>
 
@@ -33,8 +33,8 @@
       <td><%= article.title %></td>
       <td><%= article.body %></td>
       <td><%= article.lead %></td>
-      <td><%= article.category_id %></td>
-      <td>Author goes here</td>
+      <td><%= Category.find(article.category_id).description %></td>
+      <td><%= Author.find(article.author_id).name %></td>
       <td><%= article.image %></td>
       <td><%= link_to 'Show', article_path(article) %></td>
     </tr>

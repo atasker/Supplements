@@ -6,6 +6,7 @@ class ArticlesController < ApplicationController
 
 	def show
 		@article = Article.friendly.find(params[:id])
+		@category = Category.find(@article.category_id)
 	end
 
 end

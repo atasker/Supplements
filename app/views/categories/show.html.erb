@@ -54,3 +54,32 @@
 	</table>
 
 <% end %>
+
+<% if ! @articles.empty? %>
+
+  <h2>All <%= @category.description %> articles</h2>
+
+  <table>
+    <tr>
+      <th>ID</th>
+      <th>Title</th>
+      <th>Body</th>
+      <th>Lead</th>
+      <th>Author</th>
+      <th>Image</th>
+    </tr>
+   
+    <% @articles.each do |article| %>
+      <tr>
+        <td><%= article.id %></td>
+        <td><%= article.title %></td>
+        <td><%= article.body %></td>
+        <td><%= article.lead %></td>
+        <td><%= Author.find(article.author_id).name %></td>
+        <td><%= article.image %></td>
+        <td><%= link_to 'Show', article_path(article) %></td>
+      </tr>
+    <% end %>
+  </table>
+
+<% end %>
