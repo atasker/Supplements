@@ -46,11 +46,16 @@
 </p>
 
 <p>
+  <strong>Image:</strong>
+  <%= @article.image %>
+</p>
+
+<p>
   <strong>Author:</strong>
   <%= Author.find(@article.author_id).name %>
 </p>
 
 <p>
-  <strong>Image:</strong>
-  <%= @article.image %>
+  <strong>Author Bio:</strong>
+  <%= Author.find(@article.author_id).bio %>
 </p>
