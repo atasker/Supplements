@@ -9,6 +9,7 @@ class SupplementDashboard < Administrate::BaseDashboard
   # on pages throughout the dashboard.
   ATTRIBUTE_TYPES = {
     category: Field::BelongsTo,
+    author: Field::BelongsTo,
     id: Field::Number,
     name: Field::String,
     aka: Field::Text,
@@ -25,6 +26,7 @@ class SupplementDashboard < Administrate::BaseDashboard
   COLLECTION_ATTRIBUTES = %i[
   id
   category
+  author
   name
   aka
   slug
@@ -33,8 +35,9 @@ class SupplementDashboard < Administrate::BaseDashboard
   # SHOW_PAGE_ATTRIBUTES
   # an array of attributes that will be displayed on the model's show page.
   SHOW_PAGE_ATTRIBUTES = %i[
-  category
   id
+  category
+  author
   name
   aka
   created_at
@@ -47,6 +50,7 @@ class SupplementDashboard < Administrate::BaseDashboard
   # on the model's form (`new` and `edit`) pages.
   FORM_ATTRIBUTES = %i[
   category
+  author
   name
   aka
   slug

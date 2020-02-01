@@ -35,6 +35,15 @@
   <%= @supplement.aka %>
 </p>
 
+<% if @supplement.author_id != nil %>
+
+  <p>
+    <strong>Author:</strong>
+    <%= Author.find(@supplement.author_id).name %>
+  </p>
+
+<% end %>
+
 <% if @supplement.category_id != nil %>
 
   <p>

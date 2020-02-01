@@ -9,6 +9,7 @@ class AuthorDashboard < Administrate::BaseDashboard
   # on pages throughout the dashboard.
   ATTRIBUTE_TYPES = {
     articles: Field::HasMany,
+    supplements: Field::HasMany,
     id: Field::Number,
     name: Field::String,
     title: Field::String,
@@ -25,6 +26,7 @@ class AuthorDashboard < Administrate::BaseDashboard
   COLLECTION_ATTRIBUTES = %i[
   id
   articles
+  supplements
   name
   title
   image
@@ -35,6 +37,7 @@ class AuthorDashboard < Administrate::BaseDashboard
   SHOW_PAGE_ATTRIBUTES = %i[
   id
   articles
+  supplements
   name
   title
   image

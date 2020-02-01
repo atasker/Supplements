@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_01_29_161751) do
+ActiveRecord::Schema.define(version: 2020_02_01_161640) do
 
   create_table "articles", force: :cascade do |t|
     t.string "title"
@@ -50,11 +50,14 @@ ActiveRecord::Schema.define(version: 2020_01_29_161751) do
     t.datetime "updated_at", precision: 6, null: false
     t.integer "category_id"
     t.string "slug"
+    t.integer "author_id"
+    t.index ["author_id"], name: "index_supplements_on_author_id"
     t.index ["category_id"], name: "index_supplements_on_category_id"
     t.index ["slug"], name: "index_supplements_on_slug", unique: true
   end
 
   add_foreign_key "articles", "authors"
   add_foreign_key "articles", "categories"
+  add_foreign_key "supplements", "authors"
   add_foreign_key "supplements", "categories"
 end
