@@ -14,6 +14,7 @@ class AuthorDashboard < Administrate::BaseDashboard
     name: Field::String,
     title: Field::String,
     image: Field::Text,
+    bio: Field::Text,
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
   }.freeze
@@ -30,6 +31,7 @@ class AuthorDashboard < Administrate::BaseDashboard
   name
   title
   image
+  bio
   ].freeze
 
   # SHOW_PAGE_ATTRIBUTES
@@ -41,6 +43,7 @@ class AuthorDashboard < Administrate::BaseDashboard
   name
   title
   image
+  bio
   created_at
   updated_at
   ].freeze
@@ -52,6 +55,7 @@ class AuthorDashboard < Administrate::BaseDashboard
   name
   title
   image
+  bio
   ].freeze
 
   # COLLECTION_FILTERS
