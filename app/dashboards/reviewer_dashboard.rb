@@ -1,6 +1,6 @@
 require "administrate/base_dashboard"
 
-class SupplementDashboard < Administrate::BaseDashboard
+class ReviewerDashboard < Administrate::BaseDashboard
   # ATTRIBUTE_TYPES
   # a hash that describes the type of each of the model's fields.
   #
@@ -8,13 +8,13 @@ class SupplementDashboard < Administrate::BaseDashboard
   # which determines how the attribute is displayed
   # on pages throughout the dashboard.
   ATTRIBUTE_TYPES = {
-    category: Field::BelongsTo,
-    author: Field::BelongsTo,
-    reviewer: Field::BelongsTo,
+    supplements: Field::HasMany,
+    articles: Field::HasMany,
     id: Field::Number,
     name: Field::String,
-    aka: Field::Text,
-    slug: Field::String,
+    title: Field::String,
+    image: Field::Text,
+    bio: Field::Text,
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
   }.freeze
@@ -25,39 +25,35 @@ class SupplementDashboard < Administrate::BaseDashboard
   # By default, it's limited to four items to reduce clutter on index pages.
   # Feel free to add, remove, or rearrange items.
   COLLECTION_ATTRIBUTES = %i[
-  id
-  category
-  author
-  reviewer
   name
-  aka
-  slug
+  supplements
+  articles
+  title
+  id
   ].freeze
 
   # SHOW_PAGE_ATTRIBUTES
   # an array of attributes that will be displayed on the model's show page.
   SHOW_PAGE_ATTRIBUTES = %i[
+  supplements
+  articles
   id
-  category
-  author
-  reviewer
   name
-  aka
+  title
+  image
+  bio
   created_at
   updated_at
-  slug
   ].freeze
 
   # FORM_ATTRIBUTES
   # an array of attributes that will be displayed
   # on the model's form (`new` and `edit`) pages.
   FORM_ATTRIBUTES = %i[
-  category
-  author
-  reviewer
   name
-  aka
-  slug
+  title
+  image
+  bio
   ].freeze
 
   # COLLECTION_FILTERS
@@ -72,10 +68,10 @@ class SupplementDashboard < Administrate::BaseDashboard
   #   }.freeze
   COLLECTION_FILTERS = {}.freeze
 
-  # Overwrite this method to customize how supplements are displayed
+  # Overwrite this method to customize how reviewers are displayed
   # across all pages of the admin dashboard.
   #
-  def display_resource(supplement)
-    supplement.name
+  def display_resource(reviewer)
+    reviewer.name
   end
 end

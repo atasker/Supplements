@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_02_01_171747) do
+ActiveRecord::Schema.define(version: 2020_02_03_012905) do
 
   create_table "articles", force: :cascade do |t|
     t.string "title"
@@ -22,8 +22,10 @@ ActiveRecord::Schema.define(version: 2020_02_01_171747) do
     t.integer "category_id"
     t.string "slug"
     t.integer "author_id"
+    t.integer "reviewer_id"
     t.index ["author_id"], name: "index_articles_on_author_id"
     t.index ["category_id"], name: "index_articles_on_category_id"
+    t.index ["reviewer_id"], name: "index_articles_on_reviewer_id"
     t.index ["slug"], name: "index_articles_on_slug", unique: true
   end
 
@@ -44,6 +46,15 @@ ActiveRecord::Schema.define(version: 2020_02_01_171747) do
     t.index ["slug"], name: "index_categories_on_slug", unique: true
   end
 
+  create_table "reviewers", force: :cascade do |t|
+    t.string "name"
+    t.string "title"
+    t.text "image"
+    t.text "bio"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
   create_table "supplements", force: :cascade do |t|
     t.string "name"
     t.text "aka"
@@ -52,13 +63,17 @@ ActiveRecord::Schema.define(version: 2020_02_01_171747) do
     t.integer "category_id"
     t.string "slug"
     t.integer "author_id"
+    t.integer "reviewer_id"
     t.index ["author_id"], name: "index_supplements_on_author_id"
     t.index ["category_id"], name: "index_supplements_on_category_id"
+    t.index ["reviewer_id"], name: "index_supplements_on_reviewer_id"
     t.index ["slug"], name: "index_supplements_on_slug", unique: true
   end
 
   add_foreign_key "articles", "authors"
   add_foreign_key "articles", "categories"
+  add_foreign_key "articles", "reviewers"
   add_foreign_key "supplements", "authors"
   add_foreign_key "supplements", "categories"
+  add_foreign_key "supplements", "reviewers"
 end

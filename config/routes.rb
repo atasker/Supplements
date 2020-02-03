@@ -9,6 +9,7 @@ Rails.application.routes.draw do
       resources :supplements
       resources :articles
       resources :authors
+      resources :reviewers
       root to: "categories#index"
   end
 

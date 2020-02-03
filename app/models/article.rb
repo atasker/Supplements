@@ -5,6 +5,8 @@ class Article < ApplicationRecord
 
 	belongs_to :category
 	belongs_to :author
+	belongs_to :reviewer
+	
 	validates :title, presence: true
 	validates :body, presence: true
 	validates :lead, presence: true

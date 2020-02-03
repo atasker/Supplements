@@ -56,6 +56,11 @@
 </p>
 
 <p>
+  <strong>Reviewed by:</strong>
+  <%= Reviewer.find(@article.reviewer_id).name %>
+</p>
+
+<p>
   <strong>Author Bio:</strong>
   <%= Author.find(@article.author_id).bio %>
 </p>

@@ -10,6 +10,7 @@ class ArticleDashboard < Administrate::BaseDashboard
   ATTRIBUTE_TYPES = {
     category: Field::BelongsTo,
     author: Field::BelongsTo,
+    reviewer: Field::BelongsTo,
     id: Field::Number,
     title: Field::String,
     body: Field::Text,
@@ -28,6 +29,7 @@ class ArticleDashboard < Administrate::BaseDashboard
   COLLECTION_ATTRIBUTES = %i[
   category
   author
+  reviewer
   id
   title
   body
@@ -38,6 +40,7 @@ class ArticleDashboard < Administrate::BaseDashboard
   SHOW_PAGE_ATTRIBUTES = %i[
   category
   author
+  reviewer
   id
   title
   body
@@ -54,6 +57,7 @@ class ArticleDashboard < Administrate::BaseDashboard
   FORM_ATTRIBUTES = %i[
   category
   author
+  reviewer
   title
   body
   lead

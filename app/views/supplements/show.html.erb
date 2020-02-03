@@ -44,11 +44,16 @@
 
 <% end %>
 
-<% if @supplement.category_id != nil %>
+<% if @supplement.reviewer_id != nil %>
 
   <p>
-    <strong>Category:</strong>
-    <%= Category.find(@supplement.category_id).description %>
+    <strong>Reviewed by:</strong>
+    <%= Reviewer.find(@supplement.reviewer_id).name %>
   </p>
 
 <% end %>
+
+<p>
+  <strong>Category:</strong>
+  <%= Category.find(@supplement.category_id).description %>
+</p>

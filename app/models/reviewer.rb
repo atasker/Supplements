@@ -1,4 +1,4 @@
-class Author < ApplicationRecord
+class Reviewer < ApplicationRecord
 
 	has_many :articles
 	has_many :supplements

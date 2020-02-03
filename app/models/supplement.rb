@@ -7,6 +7,7 @@ class Supplement < ApplicationRecord
 
 	belongs_to :category
 	belongs_to :author
+	belongs_to :reviewer
 	
 	validates :name, presence: true
 
