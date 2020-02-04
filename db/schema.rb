@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_02_03_012905) do
+ActiveRecord::Schema.define(version: 2020_02_04_140311) do
 
   create_table "articles", force: :cascade do |t|
     t.string "title"
@@ -64,6 +64,14 @@ ActiveRecord::Schema.define(version: 2020_02_03_012905) do
     t.string "slug"
     t.integer "author_id"
     t.integer "reviewer_id"
+    t.text "description"
+    t.text "function"
+    t.text "instructions"
+    t.text "benefits"
+    t.text "dangers"
+    t.text "bullets"
+    t.text "faq"
+    t.text "sources"
     t.index ["author_id"], name: "index_supplements_on_author_id"
     t.index ["category_id"], name: "index_supplements_on_category_id"
     t.index ["reviewer_id"], name: "index_supplements_on_reviewer_id"

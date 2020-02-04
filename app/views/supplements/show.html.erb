@@ -1,5 +1,5 @@
 <% content_for :head do %>
-  <title><%= @supplement.name %>: Benefits, Uses and Side Effects | HealthBravo</title>
+  <title><%= @supplement.name %>: Benefits, Uses and Side Effects</title>
   <meta name="description" content="website description < 300 chars">
 <% end %>
 
@@ -21,11 +21,6 @@
 </nav>
 
 <p>
-  <strong>ID:</strong>
-  <%= @supplement.id %>
-</p>
-
-<p>
   <strong>Name:</strong>
   <%= @supplement.name %>
 </p>
@@ -38,8 +33,11 @@
 <% if @supplement.author_id != nil %>
 
   <p>
-    <strong>Author:</strong>
+    <strong>Written by:</strong>
     <%= Author.find(@supplement.author_id).name %>
+  </p>
+  <p>
+    <%= Author.find(@supplement.author_id).bio %>
   </p>
 
 <% end %>
@@ -50,10 +48,90 @@
     <strong>Reviewed by:</strong>
     <%= Reviewer.find(@supplement.reviewer_id).name %>
   </p>
+  <p>
+    <%= Reviewer.find(@supplement.reviewer_id).bio %>
+  </p>
 
 <% end %>
 
-<p>
-  <strong>Category:</strong>
-  <%= Category.find(@supplement.category_id).description %>
-</p>
+<% if @supplement.description != nil %>
+
+  <p>
+    <h2>What is <%= @supplement.name %>?</h2>
+    <%= @supplement.description %>
+  </p>
+
+<% end %>
+
+<% if @supplement.function != nil %>
+
+  <p>
+    <h2>How does <%= @supplement.name %> work?</h2>
+    <%= @supplement.function %>
+  </p>
+
+<% end %>
+
+<% if @supplement.instructions != nil %>
+
+  <p>
+    <h2>How to take <%= @supplement.name %>?</h2>
+    <%= @supplement.instructions %>
+  </p>
+
+<% end %>
+
+<% if @supplement.benefits != nil %>
+
+  <p>
+    <h2><%= @supplement.name %> Benefits</h2>
+    <%= @supplement.benefits %>
+  </p>
+
+<% end %>
+
+<% if @supplement.dangers != nil %>
+
+  <p>
+    <h2><%= @supplement.name %> Side Effects</h2>
+    <%= @supplement.dangers %>
+  </p>
+
+<% end %>
+
+<% if @supplement.bullets != nil %>
+
+  <p>
+    <strong>Notes:</strong>
+    <br />
+    <% @supplement.bullets.split(',').each do |bullet| %>
+      <%= bullet %><br />
+    <% end %>
+  </p>
+
+<% end %>
+
+<% if @supplement.faq != nil %>
+
+  <p>
+    <strong>FAQ</strong>
+    <br />
+    <% faq_hash = eval(@supplement.faq) %>
+    <% faq_hash.each do |q, a| %>
+      <%= "#{q}: #{a}" %><br />
+    <% end %>
+  </p>
+
+<% end %>
+
+<% if @supplement.sources != nil %>
+
+  <p>
+    <strong>Sources</strong>
+    <br />
+    <% @supplement.sources.split(',').each do |source| %>
+      <%= source %><br />
+    <% end %>
+  </p>
+
+<% end %>

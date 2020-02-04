@@ -14,6 +14,14 @@ class SupplementDashboard < Administrate::BaseDashboard
     id: Field::Number,
     name: Field::String,
     aka: Field::Text,
+    description: Field::Text,
+    function: Field::Text,
+    instructions: Field::Text,
+    benefits: Field::Text,
+    dangers: Field::Text,
+    bullets: Field::Text,
+    faq: Field::Text,
+    sources: Field::Text,
     slug: Field::String,
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
@@ -26,38 +34,52 @@ class SupplementDashboard < Administrate::BaseDashboard
   # Feel free to add, remove, or rearrange items.
   COLLECTION_ATTRIBUTES = %i[
   id
+  name
   category
   author
   reviewer
-  name
-  aka
-  slug
   ].freeze
 
   # SHOW_PAGE_ATTRIBUTES
   # an array of attributes that will be displayed on the model's show page.
   SHOW_PAGE_ATTRIBUTES = %i[
   id
+  name
+  aka
   category
   author
   reviewer
-  name
-  aka
+  slug
+  description
+  function
+  instructions
+  benefits
+  dangers
+  bullets
+  faq
+  sources
   created_at
   updated_at
-  slug
   ].freeze
 
   # FORM_ATTRIBUTES
   # an array of attributes that will be displayed
   # on the model's form (`new` and `edit`) pages.
   FORM_ATTRIBUTES = %i[
+  name
+  aka
   category
   author
   reviewer
-  name
-  aka
   slug
+  description
+  function
+  instructions
+  benefits
+  dangers
+  bullets
+  faq
+  sources
   ].freeze
 
   # COLLECTION_FILTERS
