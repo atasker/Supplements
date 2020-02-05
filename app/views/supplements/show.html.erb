@@ -30,7 +30,7 @@
   <%= @supplement.aka %>
 </p>
 
-<% if @supplement.author_id != nil %>
+<% if !@supplement.author_id.blank? %>
 
   <p>
     <strong>Written by:</strong>
@@ -42,7 +42,7 @@
 
 <% end %>
 
-<% if @supplement.reviewer_id != nil %>
+<% if !@supplement.reviewer_id.blank? %>
 
   <p>
     <strong>Reviewed by:</strong>
@@ -54,7 +54,7 @@
 
 <% end %>
 
-<% if @supplement.description != nil %>
+<% if !@supplement.description.blank? %>
 
   <p>
     <h2>What is <%= @supplement.name %>?</h2>
@@ -63,7 +63,7 @@
 
 <% end %>
 
-<% if @supplement.function != nil %>
+<% if !@supplement.function.blank? %>
 
   <p>
     <h2>How does <%= @supplement.name %> work?</h2>
@@ -72,7 +72,7 @@
 
 <% end %>
 
-<% if @supplement.instructions != nil %>
+<% if !@supplement.instructions.blank? %>
 
   <p>
     <h2>How to take <%= @supplement.name %>?</h2>
@@ -81,7 +81,7 @@
 
 <% end %>
 
-<% if @supplement.benefits != nil %>
+<% if !@supplement.benefits.blank? %>
 
   <p>
     <h2><%= @supplement.name %> Benefits</h2>
@@ -90,7 +90,7 @@
 
 <% end %>
 
-<% if @supplement.dangers != nil %>
+<% if !@supplement.dangers.blank? %>
 
   <p>
     <h2><%= @supplement.name %> Side Effects</h2>
@@ -99,7 +99,7 @@
 
 <% end %>
 
-<% if @supplement.bullets != nil %>
+<% if !@supplement.bullets.blank? %>
 
   <p>
     <strong>Notes:</strong>
@@ -112,7 +112,7 @@
 
 <% end %>
 
-<% if @supplement.faq != nil %>
+<% if !@supplement.faq.blank? %>
 
   <p>
     <strong>FAQ</strong>
@@ -125,7 +125,7 @@
 
 <% end %>
 
-<% if @supplement.sources != nil %>
+<% if !@supplement.sources.blank? %>
 
   <p>
     <strong>Sources</strong>
