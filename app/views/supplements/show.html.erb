@@ -54,6 +54,12 @@
 
 <% end %>
 
+<% if !@supplement.safe %>
+  <div style="background-color: red;">
+    <h4>Check dangers section, this supplement has health warnings.</h4>
+  </div>
+<% end %>
+
 <% if !@supplement.description.blank? %>
 
   <p>

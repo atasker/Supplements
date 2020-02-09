@@ -22,6 +22,7 @@ class SupplementDashboard < Administrate::BaseDashboard
     bullets: Field::Text,
     faq: Field::Text,
     sources: Field::Text,
+    safe: Field::Boolean,
     slug: Field::String,
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
@@ -58,6 +59,7 @@ class SupplementDashboard < Administrate::BaseDashboard
   bullets
   faq
   sources
+  safe
   created_at
   updated_at
   ].freeze
@@ -80,6 +82,7 @@ class SupplementDashboard < Administrate::BaseDashboard
   bullets
   faq
   sources
+  safe
   ].freeze
 
   # COLLECTION_FILTERS
