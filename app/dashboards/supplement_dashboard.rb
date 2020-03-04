@@ -20,7 +20,6 @@ class SupplementDashboard < Administrate::BaseDashboard
     benefits: Field::Text,
     dangers: Field::Text,
     bullets: Field::Text,
-    faq: Field::Text,
     sources: Field::Text,
     safe: Field::Boolean,
     slug: Field::String,
@@ -57,7 +56,6 @@ class SupplementDashboard < Administrate::BaseDashboard
   benefits
   dangers
   bullets
-  faq
   sources
   safe
   created_at
@@ -80,7 +78,6 @@ class SupplementDashboard < Administrate::BaseDashboard
   benefits
   dangers
   bullets
-  faq
   sources
   safe
   ].freeze

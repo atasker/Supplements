@@ -118,19 +118,6 @@
 
 <% end %>
 
-<% if !@supplement.faq.blank? %>
-
-  <p>
-    <strong>FAQ</strong>
-    <br />
-    <% faq_hash = string_to_hash(@supplement.faq) %>
-    <% faq_hash.each do |q, a| %>
-      <%= "#{q}: #{a}" %><br />
-    <% end %>
-  </p>
-
-<% end %>
-
 <% if !@supplement.sources.blank? %>
 
   <p>

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_02_09_181520) do
+ActiveRecord::Schema.define(version: 2020_03_04_233820) do
 
   create_table "articles", force: :cascade do |t|
     t.string "title"
@@ -70,7 +70,6 @@ ActiveRecord::Schema.define(version: 2020_02_09_181520) do
     t.text "benefits"
     t.text "dangers"
     t.text "bullets"
-    t.text "faq"
     t.text "sources"
     t.boolean "safe", default: true
     t.index ["author_id"], name: "index_supplements_on_author_id"
